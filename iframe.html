@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Iframe Source</title>
+</head>
+<body>
+    <iframe id="myFrame"></iframe>
+<style>
+ body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+
+        #myFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: fixed;
+        }
+  
+</style>
+    <script>
+        // Get the source from the query parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var source = urlParams.get("source");
+
+        // Set the source to the iframe
+        var iframe = document.getElementById("myFrame");
+        iframe.src = source;
+    </script>
+</body>
+</html>
